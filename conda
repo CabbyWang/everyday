@@ -1,7 +1,26 @@
 查看conda版本
   conda --version(conda -V)
+  
 升级conda
   conda udpdate conda
+  
+查看当前环境(列出所有环境)
+  conda info --envs(conda info -e)
 
 
 管理环境(env)
+
+  conda create --name snowflake biopython
+  conda create -n snakes python=3 (snake为环境的名字，用来切换环境)
+
+切换环境(activate/deactivate)
+  Linux，OS X: source activate snowflakes
+  Windows：activate snowflakes
+  deactivate(从当前工作环境的路径切换到系统根目录)
+  
+复制环境(clone)
+  conda create -n flowers --clone snowflakes
+  
+移除环境(remove)
+  conda remove -n flowers --all
+  
