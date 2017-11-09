@@ -1,0 +1,7 @@
+查看conda版本
+  conda --version(conda -V)
+升级conda
+  conda udpdate conda
+
+
+管理环境(env)
