@@ -1,0 +1,49 @@
+request  response
+
+Request请求方式 get/post
+
+get:请求的参数都包含在网址中
+post:请求的参数包含在Form Data里
+
+ URL 全称 统一资源定位符，如一个网页文档，一张图片，一个视频都可以用URL唯一来确定。
+
+请求头  User-Agent  Host  Cookies
+
+请求体  Form Data
+
+response = requests.get('',headers={})
+response.status_code   状态 200为正常
+response.headers       头信息
+
+图片：(二进制)
+response = requests.get('')
+response.content    二进制文件
+with open('', 'wb') as f:
+    f.write(response.content)
+
+
+解析方式：
+
+直接处理
+Json解析（ajax 结构化的信息，类似键值对）
+正则表达式（html中信息的提取）
+解析库 BeautifulSoup   PyQuery  XPath
+
+JavaScript渲染：
+1.分析Ajax
+
+2.Selenium/WebDriver
+from selenium import webdriver
+driver = webdriver.Chrome()   打开一个Chrome浏览器
+driver.get('http://m.weibo.com')
+driver.page_source       查看网页源代码
+
+3.Splash
+
+4.PyV8  Ghost.py
+
+
+
+DataGrip      数据库管理工具
+Robomongo     MongoDB可视化工具
+Keynote       Mac OS X 演示幻灯片软件
