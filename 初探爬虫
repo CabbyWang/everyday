@@ -47,3 +47,53 @@ driver.page_source       查看网页源代码
 DataGrip      数据库管理工具
 Robomongo     MongoDB可视化工具
 Keynote       Mac OS X 演示幻灯片软件
+
+
+Cookie   指某些网站为了辨别用户身份，进行session跟踪而储存在用户本地终端上的数据（通常经过加密）
+
+exit() if not response.status_code == requests.codes.ok else print('Request Successfully')
+
+post   # 文件上传
+files = {'file',open('favicon.ico', 'rb')}
+response = requests.post('http://www.httpbin.org/post', files=files)
+
+会话维持（模拟登陆）
+s = requests.Session()
+s.get('http://httpbin.org/cookies/set/number/123456789')
+response = s.get('http://httpbin.org/cookies')
+response.text  # 获取set过的cookies
+
+抛出SSLError错误(证书验证)
+response = requests.get('http://www.12306.com', verify=False)
+1.消除警告信息
+from requests.packages import urllib3
+urllib.disable_warnings()
+2.设置请求证书
+response = requests.get('http://www.12306.com', cert=('/path/server.crt', '/path/key'))
+
+代理设置
+1.http/https代理
+proxies = {
+'http':'http://127.0.0.1:9743',
+'https':'https://127.0.0.1:9743'}
+proxies = {'http':'use:password@127.0.0.1:9743'}(代理密码)
+response = requests.get('https://www.taobao.com', proxies=proxies)
+2.socks代理
+pip install 'requests[socks]'(先安装socks处理socks代理)
+proxies = {
+'http': 'socks5://127.0.0.1:9742',
+'https': 'socks5://127.0.0.1:9742'}
+response = requests.get('https://www.taobao.com', proxies=proxies)
+
+超时设置
+try:
+    response = requests.get('https://www.taobao.com', timeout = 1)
+except ReadTimeout:
+    print('Timeout')
+
+认证设置
+response = requests.get('https://www.taobao.com', auth={'user', '123'})
+
+
+
+
