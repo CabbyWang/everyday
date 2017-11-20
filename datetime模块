@@ -1,3 +1,4 @@
+# datetime
 from datetime import datetime        # datetime是一个模块， 后面import的是datetime模块中的一个datetime类
 
 now = datetime.now()                 # 获取当前的datetime
