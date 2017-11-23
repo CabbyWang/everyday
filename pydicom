@@ -1,4 +1,5 @@
 import dicom
+（在0.9.9版本以前使用dicom， 在之后的1.0版本之后使用pydicom）
 
 ds = dicom.read_file("d:\\test\\101.dcm")   #读取dicom文件
 
