@@ -1,4 +1,8 @@
+***
+````
 import dicom
+import pydicom
+````
 （在0.9.9版本以前使用dicom， 在之后的1.0版本之后使用pydicom）
 
 ds = dicom.read_file("d:\\test\\101.dcm")   #读取dicom文件
@@ -17,5 +21,11 @@ pixel_bytes = ds.PixelData   #原始的二进制文件
 pix = ds.pixel_array         #CT值组成了一个矩阵
 
 ds.save_as('d:\\test\\101.dcm')   #写入操作，保存
+
+ds.file_meta.MediaStorageSOPClassUID = ''
+ds.file_meta.FileMetaInformationVersion = ''
+ds.file_meta.File.MetaInformationGroupLength = ''
+ds.file_meta.ImplementationClassUID = ''
+ds.file_meta.MediaStorageSOPInstanceUID = ''
 
 [nibable解析nii]http://nipy.org/nibabel/
