@@ -40,7 +40,11 @@
 ````
 
 安装工具包
-  `conda install scrapy(安装爬虫工具包)`
+````
+conda install scrapy(安装爬虫工具包)
+conda install pyqt=4
+conda install pyqt=4.11
+````
 
 有时不能找到Package
 [https://superuser.com/questions/988505/how-to-search-and-install-package-in-anaconda-conda](https://superuser.com/questions/988505/how-to-search-and-install-package-in-anaconda-conda)
