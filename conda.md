@@ -3,7 +3,11 @@
   `conda --version(conda -V)`
   
 升级conda
-  `conda udpdate conda`
+  ````
+  conda udpdate conda
+  conda update --all
+  ````
+  
   
 查看当前的配置信息(platform,conda version, conda-env version, default enviroment, channel URLs ...)
   `conda info`
