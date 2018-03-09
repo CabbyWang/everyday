@@ -24,7 +24,7 @@ ds.save_as('d:\\test\\101.dcm')   #写入操作，保存
 
 ds.file_meta.MediaStorageSOPClassUID = ''
 ds.file_meta.FileMetaInformationVersion = ''
-ds.file_meta.File.MetaInformationGroupLength = ''
+ds.file_meta.FileMetaInformationGroupLength = ''
 ds.file_meta.ImplementationClassUID = ''
 ds.file_meta.MediaStorageSOPInstanceUID = ''
 
