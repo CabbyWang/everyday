@@ -3,17 +3,20 @@
   `conda --version(conda -V)`
   
 升级conda
-  ````
+````python
   conda udpdate conda
   conda update --all
-  ````
-  
-  
-查看当前的配置信息(platform,conda version, conda-env version, default enviroment, channel URLs ...)
-  `conda info`
+````
+
+查看当前的配置信息(如platform,conda version, conda-env version, default enviroment, channel URLs ...)
+```
+conda info`
+```
   
 查看当前环境(列出所有环境)
-  `conda info --envs(conda info -e)`
+```python
+conda info --envs(conda info -e)
+```
 
 
 管理环境(env)
@@ -30,17 +33,21 @@
 ````
 
 复制环境(clone)
-`conda create -n flowers --clone snowflakes`
+```
+conda create -n flowers --clone snowflakes
+```
   
 移除环境(remove)
-  `conda remove -n flowers --all`
+```
+conda remove -n flowers --all
+```
 
 国内镜像源作为默认镜像
-````
+````python
   conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
-  conda config --set show_channel_urls yes(此行不知道具体意思...)
-  此时在用户目录下会生成配置文件.condarc(估计是conda resource的意思)
-  删除默认的镜像(- default)
+  conda config --set show_channel_urls yes # 显示url
+  # 此时在用户目录下会生成配置文件.condarc(估计是conda resource的意思)
+  # 删除默认的镜像(- default)
 ````
 
 安装工具包
