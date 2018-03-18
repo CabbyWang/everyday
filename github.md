@@ -82,15 +82,63 @@ git push -u origin <master>  # 本地库推送到远程库
 
 分支(branch)
 ````
+git branch
 git branch -a           # -a 为all
+git branch <dev>
+git branch -D <dev>     # 强制删除dev分支
 git branch -d <dev>     # 删除dev分支
 git checkout -b <dev>   # 创建+切换到分支dev, 相当于下两句
-git branch <dev>
 git checkout <dev>
-
+git checkout <file>     # 还原文件,丢弃修改
 
 ````
 ````
 git log                     # 查看提交记录
 git log --pretty=oneline    # 显示为一行
+git relog                   # 查看命令记录
 ````
+
+````python
+git rm xxx
+git diff
+git diff --cached         # index中的diff
+git cherry-pick commitID  # 把commitID提交当前分支上面(最好用merge)
+git revert                # 还原一个版本的修改(必须提供一个具体的git版本号)
+git reset                 # 将当前的工作目录完全回滚到指定的版本号
+git rebase
+````
+
+````
+git stash                           # 将当前未提交的工作存入Git工作栈中
+git stash list                      # 查看暂存
+git stash apply stash@{1}/stash pop
+git stash clear
+````
+````
+git tag      # 查看tag
+git tag -a v1.0.0 -m "release- 1.0.0发布"
+git checkout tagname
+git tag -d v1.0.0  # 删除tag
+git push origin v1.0.0  # 发布tag
+git push origin -tags  # 发布所有tag
+Git push origin :refs/tags/tagname   # 删除远程tag
+git tag -a v1.0.0 commitID  # 制定commitID生成tag
+````
+
+```
+git fetch       # 从远程获取最新版本到本地，并创建一个分支，不会自动merge
+git merge       # git fetch + git merge
+````
+
+commit后发现遗漏文件解决办法(--amend)<br>[https://www.atlassian.com/git/tutorials/rewriting-history](https://www.atlassian.com/git/tutorials/rewriting-history)
+```python
+git add xx
+git commit -m 'aa'
+git add yy
+git commit --amend -m 'aa and bb'  # commit注释从'aa'变为'aa and bb'
+git commit --amend --no-edit       # 不修改
+```
+
+##### 3.工作流
+
+##### 4.git hook
