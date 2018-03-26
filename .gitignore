@@ -2,3 +2,6 @@
 .idea
 __pycache__
 .cache
+
+# SQLite databases
+data.sql
