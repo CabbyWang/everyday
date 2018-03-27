@@ -38,3 +38,4 @@ for i in reversed(num_list):
 ````
 倒序循环删除和正序删除的区别(自己画了一个草图)
 ![](https://raw.githubusercontent.com/CabbyWang/everyday/master/image/reversed.jpg)
+![](image/reversed.jpg)
