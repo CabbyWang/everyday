@@ -37,4 +37,7 @@ for i in reversed(num_list):
         print(i)
 ````
 倒序循环删除和正序删除的区别(自己画了一个草图)
-![](https://raw.githubusercontent.com/CabbyWang/everyday/master/image/reversed.jpg)
+![xx](https://raw.githubusercontent.com/CabbyWang/everyday/master/image/reversed.jpg)
+
+markdown显示本地图片语法   
+`![xxx](../image/reversed.jpg)`
