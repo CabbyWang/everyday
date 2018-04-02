@@ -11,3 +11,7 @@ Docker Store[https://store.docker.com/](https://store.docker.com/)
 
 # 3. 用命令去运行镜像
 在`Docker Hub`中搜索镜像即可获取相应镜像的`Usage`, 操作简单, 此处忽略...
+```bash
+docker images    # 查看本地存在的镜像
+```
+***
