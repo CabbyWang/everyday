@@ -13,5 +13,10 @@ Docker Store[https://store.docker.com/](https://store.docker.com/)
 在`Docker Hub`中搜索镜像即可获取相应镜像的`Usage`, 操作简单, 此处忽略...
 ```bash
 docker images    # 查看本地存在的镜像
+docker image ls
 ```
 ***
+
+# 创建自己的docker镜像
+[http://www.cnblogs.com/linjj/p/5606911.html](http://www.cnblogs.com/linjj/p/5606911.html)
+自己操作时出了问题, 而且速度特别慢...不想研究了,等有了mac继续更新- -
