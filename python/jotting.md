@@ -36,6 +36,22 @@ for i in reversed(num_list):
     else:
         print(i)
 ````
+
+- 如果list特别大, 使用reversed感觉有些不合适
+```python
+num_list = [1, 2, 3, 4, 5]
+for i in range(len(num_list), -1, -1):      # 这里使用range的后两个参数进行倒序遍历
+    if i == 2:
+        num_list.remove(i)
+    else:
+        print(i)
+```
+
+- filter实现删除
+```python
+num_list = [1, 2, 3, 4, 5]
+list(filter(num_list, lambda x: x != 2))
+```
 倒序循环删除和正序删除的区别(自己画了一个草图)
 ![xx](https://raw.githubusercontent.com/CabbyWang/everyday/master/image/reversed.jpg)
 
