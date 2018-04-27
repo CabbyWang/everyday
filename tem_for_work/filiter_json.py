@@ -21,7 +21,8 @@ def filter_file(json_file):
             return
         new_nodules = {}
         for i, item in enumerate(new_items):
-            new_nodules['item{}'.format(i)] = item
+            new_nodules.setdefault('Nodules', {})['item{}'.format(i)] = item
+            new_nodules['Nodules']['item{}'.format(i)]['VerifiedNodule']['labelIndex'] = str(i)
         new_nodules['AdditionalDiseases'] = origin.get('AdditionalDiseases', {})
         new_nodules['labelVersion'] = origin.get('labelVersion')
         new_nodules['version'] = origin.get('version')
@@ -41,7 +42,8 @@ def main():
             out_file = Path(out_dir, name)
             print(out_file)
             with open(out_file, 'w') as fp:
-                json.dump(new_nodules, fp, indent=4, sort_keys=True)
+                json.dump(new_nodules, fp, indent=4)
+                # json.dump(new_nodules, fp, indent=4, sort_keys=True)
 
 
 if __name__ == '__main__':
