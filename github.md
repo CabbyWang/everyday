@@ -1,14 +1,14 @@
 ﻿***
 #### github多账号配置
 ##### 1. 生成ssh密钥
-````
+````python
  ssh-keygen -t rsa -C "xxx@163.com"             # -C后面为注释内容
 ````
-````
+````python
  ssh-add ~/.ssh/id_rsa_xx         # 让SSH识别新的私钥
 ````
  出现 `Could not open a connection to your authentication agent` 错误
-````
+````python
  ssh-agent bash             # 类似刷新操作？
  ssh-add ~/.ssh/id_rsa_xx   # 添加文件到ssh
 ````
@@ -37,7 +37,7 @@
 
 ##### 4. 测试
 ~ssh -T git@对应的服务器地址
-~~~~
+~~~~python
 ssh -T git@git1
 ssh -T git@git2
 ~~~~
