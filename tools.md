@@ -1,0 +1,17 @@
+# Windows
+- Wox
+- everything
+- vscode
+- pycharm
+- conda          python版本管理
+- nvm            nodejs版本管理
+- git            文本版本管理
+- SourceTree     git可视化工具
+- Typora         MarkDown编辑器
+- 7zip           解压软件
+- Foxit Reader   PDF阅读器
+- Ditto          剪贴板增强
+- Clover         文件管理
+- Fences         桌面整理
+- Fastcopy       文件拷贝、删除软件
+- ShareX
