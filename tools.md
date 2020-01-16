@@ -15,3 +15,4 @@
 - Fences         桌面整理
 - Fastcopy       文件拷贝、删除软件
 - ShareX
+- HFS                HTTP File Server

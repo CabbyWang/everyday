@@ -5,3 +5,8 @@
 ```bash
 Cmder.exe /REGISTER ALL
 ```
+rm -rf 不能用？
+
+mv 不能用？
+
+grep 不能用？
