@@ -17,7 +17,7 @@ log-level: silent
 # info / warning / error / debug / silent
 
 external-controller: 0.0.0.0:7892
-# external-ui: yacd-gh-pages
+external-ui: yacd-gh-pages
 secret: ""
 
 
