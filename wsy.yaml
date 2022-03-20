@@ -123,17 +123,27 @@ proxies:
   #   skip-cert-verify: false
   #   network: tcp
 
-# proxy-providers:
-#   provider1:
-#     type: http
-#     url: "url"
-#     interval: 3600
-#     path: ./provider1.yaml
-#     health-check:
-#       enable: true
-#       interval: 600
-#       # lazy: true
-#       url: http://www.gstatic.com/generate_204
+proxy-providers:
+  pp:
+    type: http
+    url: "https://pub-api-1.bianyuan.xyz/sub?target=clash&url=https%3A%2F%2Fwww.ppyun.cyou%2Flink%2Ff7rrKrOZjra3H6m4%3Fsub%3D3&insert=false&emoji=true&list=false&tfo=false&scv=false&fdn=false&sort=false&new_name=true"
+    interval: 3600
+    path: ./test.yaml
+    health-check:
+      enable: true
+      interval: 600
+      # lazy: true
+      url: http://www.gstatic.com/generate_204
+  # provider1:
+  #   type: http
+  #   url: "url"
+  #   interval: 3600
+  #   path: ./provider1.yaml
+  #   health-check:
+  #     enable: true
+  #     interval: 600
+  #     # lazy: true
+  #     url: http://www.gstatic.com/generate_204
 #   test:
 #     type: file
 #     path: /test.yaml
@@ -175,6 +185,15 @@ proxy-groups:
       # - v3
       # - v4
       # - v5
+
+  - name: "UseProvider"
+    type: url-test
+    use:
+      - pp
+    proxies:
+      # - DIRECT
+    url: 'http://www.gstatic.com/generate_204'
+    interval: 300
 
 rule-providers:
   reject:
@@ -364,6 +383,7 @@ rule-providers:
 
 # 黑名单模式
 rules:
+  # - DOMAIN-KEYWORD,steampowered.com,DIRECT
   - RULE-SET,applications,DIRECT
   - DOMAIN,clash.razord.top,DIRECT
   - DOMAIN,yacd.haishan.me,DIRECT
