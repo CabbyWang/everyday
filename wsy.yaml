@@ -48,8 +48,51 @@ proxies:
     type: trojan
     server: wangsiyong.xyz  # 替换为你自己的 (共2处，第1处)
     port: 443
-    password: 123456  # 替换为你自己的 (共2处，第2处)
+    password: Wsy123321  # 替换为你自己的 (共2处，第2处)
     # udp: true
+
+  - name: aws
+    type: trojan
+    server: aws.wangsiyong.top
+    port: 443
+    password: aa9ec8ae
+    # udp: true
+
+  - name: Trojan02
+    type: trojan
+    server: cabbyw.xyz
+    port: 443
+    password: 122838
+    # udp: true
+
+  - name: arm1
+    type: trojan
+    server: arm1.wangsiyong.top
+    port: 443
+    password: a4070374
+    # udp: true
+
+  - name: arm2
+    type: trojan
+    server: arm2.wangsiyong.top
+    port: 443
+    password: 00cb9a7b
+    # udp: true
+
+  - name: arm3
+    type: trojan
+    server: arm3.wangsiyong.top
+    port: 443
+    password: fc48c05d
+    # udp: true
+
+  - name: arm4
+    type: trojan
+    server: arm4.wangsiyong.top
+    port: 443
+    password: 7a32d584
+    # udp: true
+    
     
   # # Trojan 自建节点 2
   # - name: Trojan02
@@ -123,26 +166,26 @@ proxies:
   #   skip-cert-verify: false
   #   network: tcp
 
-proxy-providers:
-  pp:
-    type: http
-    url: "https://pub-api-1.bianyuan.xyz/sub?target=clash&url=https%3A%2F%2Fwww.ppyun.cyou%2Flink%2Ff7rrKrOZjra3H6m4%3Fsub%3D3&insert=false&emoji=true&list=false&tfo=false&scv=false&fdn=false&sort=false&new_name=true"
-    interval: 3600
-    path: ./test.yaml
-    health-check:
-      enable: true
-      interval: 600
-      # lazy: true
-      url: http://www.gstatic.com/generate_204
-  # provider1:
-  #   type: http
-  #   url: "url"
-  #   interval: 3600
-  #   path: ./provider1.yaml
-  #   health-check:
-  #     enable: true
-  #     interval: 600
-  #     # lazy: true
+# proxy-providers:
+#   pp:
+#     type: http
+#     url: "https://pub-api-1.bianyuan.xyz/sub?target=clash&url=https%3A%2F%2Fwww.ppyun.cyou%2Flink%2Ff7rrKrOZjra3H6m4%3Fsub%3D3&insert=false&emoji=true&list=false&tfo=false&scv=false&fdn=false&sort=false&new_name=true"
+#     interval: 3600
+#     path: ./test.yaml
+#     health-check:
+#       enable: true
+#       interval: 600
+#       # lazy: true
+#       url: http://www.gstatic.com/generate_204
+#   # provider1:
+#   #   type: http
+#   #   url: "url"
+#   #   interval: 3600
+#   #   path: ./provider1.yaml
+#   #   health-check:
+#   #     enable: true
+#   #     interval: 600
+#   #     # lazy: true
   #     url: http://www.gstatic.com/generate_204
 #   test:
 #     type: file
@@ -157,43 +200,49 @@ proxy-groups:
   - name: "PROXY"
     type: url-test
     proxies:
+      - aws
       - Trojan01
+      - Trojan02
+      - arm1
+      - arm2
+      - arm3
+      - arm4
     url: 'http://www.gstatic.com/generate_204'
     interval: 300
 
   - name: "Fast"
     type: url-test   # url-test 表示自动切换最快节点
     proxies:
+      - aws
       - Trojan01
-      # - Trojan02
-      # - V2ray01
-      # - V2ray02
-      # - v3
-      # - v4
-      # - v5
+      - Trojan02
+      - arm1
+      - arm2
+      - arm3
+      - arm4
     url: 'http://www.gstatic.com/generate_204'
     interval: 300
 
   - name: "FuckWall"
     type: select   # select 表示手动选择节点
     proxies:
+      - aws
       - Fast
       - Trojan01
-      # - Trojan02
-      # - V2ray01
-      # - V2ray02
-      # - v3
-      # - v4
-      # - v5
+      - Trojan02
+      - arm1
+      - arm2
+      - arm3
+      - arm4
 
-  - name: "UseProvider"
-    type: url-test
-    use:
-      - pp
-    proxies:
-      # - DIRECT
-    url: 'http://www.gstatic.com/generate_204'
-    interval: 300
+  # - name: "UseProvider"
+  #   type: url-test
+  #   use:
+  #     - pp
+  #   proxies:
+  #     # - DIRECT
+  #   url: 'http://www.gstatic.com/generate_204'
+  #   interval: 300
 
 rule-providers:
   reject:
@@ -393,4 +442,4 @@ rules:
   - RULE-SET,gfw,PROXY
   - RULE-SET,greatfire,PROXY
   - RULE-SET,telegramcidr,PROXY
-  - MATCH,DIRECT
+  - MATCH,PROXY
